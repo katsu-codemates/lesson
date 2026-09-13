@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyPatrol2D : MonoBehaviour
+public class EnemyPatrol2D913 : MonoBehaviour
 {
     [Header("Move Settings")]
     public float moveSpeed = 2f;
@@ -8,38 +8,32 @@ public class EnemyPatrol2D : MonoBehaviour
 
     [Header("Stomp Settings")]
     public float stompHeight = 0.3f;
-    public float playerBouncePower = 8f;
+    public float playBouncePower = 8f;
+
+    public GameManager2D916 gameManeger;
 
     private Vector2 startPosition;
-    private int moveDirection = 1;
+    private int moveDirectiion = 1;
     private SpriteRenderer enemySprite;
-    private GameManager2D GameManager;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        //最初の位置を保存
         startPosition = transform.position;
-        //スライムのSpriteRendererを取得
         enemySprite = GetComponent<SpriteRenderer>();
-        //GameManager2Dをシーン内から探して取得
-        GameManager = FindAnyObjectByType<GameManager2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //敵を動かす
-        transform.Translate(Vector2.right * moveDirection * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * moveDirectiion * moveSpeed * Time.deltaTime);
 
-        //反復移動させる
         if (transform.position.x > startPosition.x + moveDistance)
         {
-            moveDirection = -1;
+            moveDirectiion = -1;
             enemySprite.flipX = true;
         }
-        else if (transform.position.x < startPosition.x - moveDistance)
+        else if (transform.position.x < startPosition.x - moveDirectiion)
         {
-            moveDirection = 1;
+            moveDirectiion = 1;
             enemySprite.flipX = false;
         }
     }
@@ -52,11 +46,11 @@ public class EnemyPatrol2D : MonoBehaviour
             {
                 Destroy(gameObject);
                 Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
-                playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocity.x, playerBouncePower);
+                playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocity.x, playBouncePower);
             }
             else
             {
-                GameManager.GameOver();
+                gameManeger.GameOver();
             }
         }
     }

@@ -1,29 +1,27 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameManager2D : MonoBehaviour
+public class GameManager2D916 : MonoBehaviour
 {
     public enum GameState
     {
         Playing,
-        GameOver,
-        Clear
+        GameOver
     }
 
     [Header("UI")]
     public GameObject gameOverText;
-    public GameObject clearText;
     public GameObject retryButton;
 
     [Header("Sound")]
     public AudioClip gameOverSound;
 
     public GameState currentState = GameState.Playing;
+
     private AudioSource gameAudioSource;
     void Start()
     {
-        //ゲームマネージャーのAudioSourceを取得
         gameAudioSource = GetComponent<AudioSource>();
     }
 
@@ -35,16 +33,8 @@ public class GameManager2D : MonoBehaviour
         PlaySound(gameOverSound);
     }
 
-    public void Clear()
-    {
-        currentState = GameState.Clear;
-        clearText.SetActive(true);
-        retryButton.SetActive(true);
-    }
-
     public void Retry()
     {
-        //今のシーンを取得して読み込み
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

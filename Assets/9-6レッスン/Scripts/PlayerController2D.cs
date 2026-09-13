@@ -16,6 +16,11 @@ public class PlayerController2D906 : MonoBehaviour
     [Header("Animation Settings")]
     public float walkAnimationSpeed = 1f;
 
+    [Header("Death")]
+    public float fallY = -10f;
+
+    public GameManager2D916 gameManeger;
+
     private Rigidbody2D playerRigidbody;
     private float horizontalInput;
     private bool isGrounded;
@@ -31,6 +36,18 @@ public class PlayerController2D906 : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.y < fallY)
+        {
+            gameManeger.GameOver();
+        }
+
+        if (gameManeger.currentState != GameManager2D916.GameState.Playing)
+        {
+            horizontalInput = 0;
+            playerAnimator.speed = 0;
+            return;
+        }
+
         horizontalInput = 0f;
         playerAnimator.speed = 0f;
 
@@ -58,7 +75,14 @@ public class PlayerController2D906 : MonoBehaviour
         {
             playerAnimator.speed = 0f;
         }
+    }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            gameManeger.GameOver();
+        }
     }
 
     void FixedUpdate()
