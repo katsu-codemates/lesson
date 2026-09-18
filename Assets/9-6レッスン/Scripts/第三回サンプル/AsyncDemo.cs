@@ -6,14 +6,22 @@ using UnityEngine;
 // 空のGameObjectに付けて、ボタンのOnClickなどから各メソッドを呼ぶ。
 public class AsyncDemo : MonoBehaviour
 {
+    void Start()
+    {
+        // RunHeavyLoop();
+    }
+
     // 重い処理をそのまま実行し、フレームが固まる様子を見せる
     public void RunHeavyLoop()
     {
-        Debug.Log("重い処理を開始します");
         long sum = 0;
         for (int i = 0; i < 2_000_000_000; i++)
         {
             sum += i;
+            for (int j = 0; j < 10; j++)
+            {
+                sum += j;
+            }
         }
         Debug.Log($"重い処理が終わりました: {sum}");
     }

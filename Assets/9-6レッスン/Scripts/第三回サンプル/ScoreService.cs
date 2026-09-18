@@ -7,6 +7,9 @@ namespace Lesson3.Networking
 {
     // Google Apps Script(GAS)で作った簡易Web APIとやり取りするサービス。
     // GameManager2D916 などにアタッチして使う想定。
+
+    // デプロイID = "AKfycbx8sZMOQf0235xo14DFqb4wVdQ2O-H1NCxB7YIwj9W3LzqgbQPLpO4PP8piKj3Dqdu8"
+    // デプロイURL = "https://script.google.com/a/macros/stu.hosei.ac.jp/s/AKfycbx8sZMOQf0235xo14DFqb4wVdQ2O-H1NCxB7YIwj9W3LzqgbQPLpO4PP8piKj3Dqdu8/exec"
     public class ScoreService : MonoBehaviour
     {
         [Header("GASでデプロイしたウェブアプリのURL")]

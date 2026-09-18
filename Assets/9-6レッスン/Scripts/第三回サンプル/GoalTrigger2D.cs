@@ -4,7 +4,7 @@ using UnityEngine;
 // Collider2Dの「Is Trigger」にチェックを入れておくこと。
 public class GoalTrigger2D : MonoBehaviour
 {
-    public GameManager2D916 gameManager;
+    public GameManager2D916new gameManager;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
