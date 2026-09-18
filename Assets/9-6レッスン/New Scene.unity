@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c740c8b17e4404b846460942415ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lesson3.Networking.ScoreService
-  webAppUrl: https://script.google.com/a/macros/stu.hosei.ac.jp/s/AKfycbx8sZMOQf0235xo14DFqb4wVdQ2O-H1NCxB7YIwj9W3LzqgbQPLpO4PP8piKj3Dqdu8/exec
+  webAppUrl: https://script.google.com/macros/s/AKfycbx6q0joXfGoviyFVmvkJn3yxJsfRqfmmfvoYQz1uDwS5U9Mp_uW7KUjfIKBAu-Uqi9P0A/exec
 --- !u!4 &1485111319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 264170391989501327, guid: eef5ac201f3467249938947f0fe34726, type: 3}
@@ -2072,50 +2072,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 264170391989501327, guid: eef5ac201f3467249938947f0fe34726, type: 3}
   m_PrefabInstance: {fileID: 6666300020732396218}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1532012112
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1532012114}
-  - component: {fileID: 1532012113}
-  m_Layer: 0
-  m_Name: AsyncDemo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1532012113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532012112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac40e2d48941bd48b40a7268c8b4784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AsyncDemo
---- !u!4 &1532012114
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532012112}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.88938, y: -0.73752, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623300768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,5 +2907,4 @@ SceneRoots:
   - {fileID: 202341957}
   - {fileID: 1932517491}
   - {fileID: 1148857500}
-  - {fileID: 1532012114}
   - {fileID: 556794060}

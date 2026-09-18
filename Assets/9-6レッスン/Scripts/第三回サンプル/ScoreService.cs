@@ -8,8 +8,8 @@ namespace Lesson3.Networking
     // Google Apps Script(GAS)で作った簡易Web APIとやり取りするサービス。
     // GameManager2D916 などにアタッチして使う想定。
 
-    // デプロイID = "AKfycbx8sZMOQf0235xo14DFqb4wVdQ2O-H1NCxB7YIwj9W3LzqgbQPLpO4PP8piKj3Dqdu8"
-    // デプロイURL = "https://script.google.com/a/macros/stu.hosei.ac.jp/s/AKfycbx8sZMOQf0235xo14DFqb4wVdQ2O-H1NCxB7YIwj9W3LzqgbQPLpO4PP8piKj3Dqdu8/exec"
+    // デプロイID = "AKfycbx6q0joXfGoviyFVmvkJn3yxJsfRqfmmfvoYQz1uDwS5U9Mp_uW7KUjfIKBAu-Uqi9P0A"
+    // デプロイURL = "https://script.google.com/macros/s/AKfycbx6q0joXfGoviyFVmvkJn3yxJsfRqfmmfvoYQz1uDwS5U9Mp_uW7KUjfIKBAu-Uqi9P0A/exec"
     public class ScoreService : MonoBehaviour
     {
         [Header("GASでデプロイしたウェブアプリのURL")]
@@ -50,6 +50,7 @@ namespace Lesson3.Networking
                 return new RankingEntry[0];
             }
 
+            Debug.Log(request.downloadHandler.text);
             RankingResponse response = JsonUtility.FromJson<RankingResponse>(request.downloadHandler.text);
             return response.ranking;
         }
