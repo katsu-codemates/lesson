@@ -4,7 +4,7 @@ using Lesson3.Networking;
 
 // 既存の GameManager2D916.cs に「// 追加」のコメントが付いた部分を足したリファレンス実装。
 // このファイルをそのまま上書きするのではなく、差分を見ながら既存のスクリプトに手を加える想定。
-public class GameManager2D916 : MonoBehaviour
+public class GameManager2D916new : MonoBehaviour
 {
     public enum GameState
     {
