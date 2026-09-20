@@ -8,11 +8,10 @@ using UnityEngine;
 // 1. EnemyData.cs から「素早い敵」「硬い敵」など複数のアセットを作る
 // 2. 敵オブジェクトのInspectorで enemyData に使いたいアセットをセットする
 // 3. 同じスクリプト・同じプレハブのまま、アセットを差し替えるだけで挙動を変えられる
-public class EnemyPatrol2D913 : MonoBehaviour
+public class EnemyPatrol2D920new : MonoBehaviour
 {
     [Header("パラメータ(ScriptableObject)")]
-    public EnemyData enemyData; // 追加: 個別のpublicフィールドの代わりにこれ1つを持たせる
-
+    public EnemyData enemyData;
     public GameManager2D916 gameManeger;
 
     private Vector2 startPosition;

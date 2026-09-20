@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 // 講座の導入パート(非同期処理の必要性を体感するデモ)で使うサンプル。
@@ -11,7 +11,7 @@ public class AsyncDemo : MonoBehaviour
         // RunHeavyLoop();
     }
 
-    // 重い処理をそのまま実行し、フレームが固まる様子を見せる
+    // 重い処理をそのまま実行するとフリーズしてしまう
     public void RunHeavyLoop()
     {
         long sum = 0;
@@ -30,12 +30,13 @@ public class AsyncDemo : MonoBehaviour
     public void StartWaitCoroutine()
     {
         StartCoroutine(WaitCoroutine());
+        Debug.Log("コルーチン開始");
     }
 
     private IEnumerator WaitCoroutine()
     {
         Debug.Log("(Coroutine) 待ち始め");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f); // ここで三秒待つ
         Debug.Log("(Coroutine) 3秒経過");
     }
 
@@ -43,7 +44,7 @@ public class AsyncDemo : MonoBehaviour
     public async void StartWaitAsync()
     {
         Debug.Log("(async) 待ち始め");
-        await Task.Delay(3000);
+        await UniTask.Delay(3000);
         Debug.Log("(async) 3秒経過");
     }
 }

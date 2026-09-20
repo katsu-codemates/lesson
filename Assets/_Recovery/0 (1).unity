@@ -273,7 +273,6 @@ GameObject:
   - component: {fileID: 202341958}
   - component: {fileID: 202341960}
   - component: {fileID: 202341959}
-  - component: {fileID: 202341961}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -362,7 +361,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202341955}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bfc2058d7067d64584341ab51a016b0, type: 3}
   m_Name: 
@@ -436,20 +435,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &202341961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202341955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cda01855b01ece4484abc0b3905dd67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol2D920new
-  enemyData: {fileID: 11400000, guid: f2d056185f9532b4a8c50513836743ec, type: 2}
-  gameManeger: {fileID: 1244710460}
 --- !u!4 &214398076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 264170391989501327, guid: eef5ac201f3467249938947f0fe34726, type: 3}

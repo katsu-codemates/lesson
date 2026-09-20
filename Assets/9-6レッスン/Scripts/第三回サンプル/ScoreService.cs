@@ -1,5 +1,5 @@
 using System.Text;
-using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -16,7 +16,7 @@ namespace Lesson3.Networking
         [SerializeField] private string webAppUrl = "https://script.google.com/macros/s/xxxxxxxx/exec";
 
         // スコアを送信する
-        public async Task<bool> SubmitScoreAsync(string playerName, int score)
+        public async UniTask<bool> SubmitScoreAsync(string playerName, int score)
         {
             var data = new ScoreData(playerName, score);
             string json = JsonUtility.ToJson(data);
@@ -39,7 +39,7 @@ namespace Lesson3.Networking
         }
 
         // ランキングを取得する(上位10件を想定)
-        public async Task<RankingEntry[]> FetchRankingAsync()
+        public async UniTask<RankingEntry[]> FetchRankingAsync()
         {
             using UnityWebRequest request = UnityWebRequest.Get(webAppUrl);
             await request.SendWebRequest();

@@ -2,7 +2,7 @@ using UnityEngine;
 
 // 敵の種類ごとのパラメータをまとめて持たせるScriptableObject。
 // Projectウィンドウで右クリック → Create → Lesson3 → EnemyData から作成する。
-[CreateAssetMenu(fileName = "NewEnemyData", menuName = "Lesson3/EnemyData")]
+[CreateAssetMenu(fileName = "NewEnemyData", menuName = "Lesson6/EnemyData")]
 public class EnemyData : ScriptableObject
 {
     [Header("移動")]
