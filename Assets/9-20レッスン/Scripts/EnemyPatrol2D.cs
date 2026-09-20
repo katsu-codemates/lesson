@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class EnemyPatrol2D920 : MonoBehaviour
 {
-    [Header("Move Settings")]
-    public float moveSpeed = 2f;
-    public float moveDistance = 3f;
+    public EnemyData920 enemyData;
 
-    [Header("Stomp Settings")]
-    public float stompHeight = 0.3f;
-    public float playBouncePower = 8f;
-
-    public GameManager2D916 gameManeger;
+    public GameManager2D920 gameManeger;
 
     private Vector2 startPosition;
     private int moveDirectiion = 1;
@@ -24,9 +18,9 @@ public class EnemyPatrol2D920 : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.right * moveDirectiion * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * moveDirectiion * enemyData.moveSpeed * Time.deltaTime);
 
-        if (transform.position.x > startPosition.x + moveDistance)
+        if (transform.position.x > startPosition.x + enemyData.moveDistance)
         {
             moveDirectiion = -1;
             enemySprite.flipX = true;
@@ -46,7 +40,7 @@ public class EnemyPatrol2D920 : MonoBehaviour
             {
                 Destroy(gameObject);
                 Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
-                playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocity.x, playBouncePower);
+                playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocity.x, enemyData.playerBouncePower);
             }
             else
             {
@@ -59,7 +53,7 @@ public class EnemyPatrol2D920 : MonoBehaviour
     {
         Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
 
-        bool playerIsAboveEnemy = player.transform.position.y > transform.position.y + stompHeight;
+        bool playerIsAboveEnemy = player.transform.position.y > transform.position.y + enemyData.stompHeight;
         bool playerIsFalling = playerRigidbody.linearVelocity.y <= 0f;
 
         return playerIsAboveEnemy && playerIsFalling;

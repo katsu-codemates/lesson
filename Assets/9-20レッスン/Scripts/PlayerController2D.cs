@@ -19,7 +19,7 @@ public class PlayerController2D920 : MonoBehaviour
     [Header("Death")]
     public float fallY = -10f;
 
-    public GameManager2D916 gameManeger;
+    public GameManager2D920 gameManeger;
 
     private Rigidbody2D playerRigidbody;
     private float horizontalInput;
@@ -41,7 +41,7 @@ public class PlayerController2D920 : MonoBehaviour
             gameManeger.GameOver();
         }
 
-        if (gameManeger.currentState != GameManager2D916.GameState.Playing)
+        if (gameManeger.currentState != GameManager2D920.GameState.Playing)
         {
             horizontalInput = 0;
             playerAnimator.speed = 0;
